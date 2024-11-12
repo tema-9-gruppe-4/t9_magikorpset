@@ -1,0 +1,53 @@
+/**I global lægger vi ind alt der er fælles for at sikre lighed og en rød tråd i designet!**/
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/**Fonts**/
+@font-face {
+  font-family: "Magic Romance Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Magic Romance Regular"),
+    url("fonts/magic_romance/MagicRomance.woff") format("woff");
+}
+/**Google font linket i head i mainlayout**/
+/**<uniquifier>: Use a unique and descriptive class name**/
+/**<weight>: Use a value from 400 to 700**/
+.instrument-sans-subheader {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+/**Variables**/
+html {
+  /**Fonts**/
+  --font1: "Magic Romance Regular";
+  --font2: "Instrument Sans", sans-serif;
+  /**Colors**/
+  --primary: #581082;
+  --secondary: #7ed7c3;
+  --tertiary: #f3fefb; /**Background**/
+  --quaternary: #cbffc4;
+  --quinary: #e9c3ff;
+}
+
+/**Fælles stylede tags**/
+body {
+  background-color: var(--tertiary);
+}
+h1 {
+  font-family: var(--font1);
+  font-size: 40px;
+  color: var(--primary);
+}
+
+p {
+  font-family: var(--font2);
+  font-size: 20px;
+  color: var(--primary);
+}
