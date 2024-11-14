@@ -1,8 +1,9 @@
 ---
-import Tryllestoev from "../components/tryllestoev.astro"
-import "../styles/general.css"
+import Tryllestoev from "../components/Tryllestoev.astro";
+import "../styles/general.css";
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,58 +11,79 @@ import "../styles/general.css"
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="noindex" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
     <title>MAGIKORPSET</title>
   </head>
 
   <header>
-	<img src="../svg/logo.svg" alt="">
+    <img src="../svg/logo.svg" alt="" />
   </header>
 
   <body>
-	<section></section>
-	<section>
-    <h1>Magikorpset gør en forskel ved at trylle og skabe magi på børneafdelingerne rundt omkring i Danmark for syge børn og deres familier.</h1>
-</section>
-<Tryllestoev/>
-<section>
-	<h1>Vi har sammen gjort en forskel</h1>
-</section>
-<section>
-	<h1>Hvad er magikorpset?</h1>
-	<p>I Magikorpset byder vi også stærke og støttende organisationer og enkeltpersoner velkommen, der ønsker at gøre en forskel for syge børn gennem Kids Aid. Som medlem af Magikorpset bliver I en aktiv del af vores mission – sammen skaber vi håb, styrke og smil for dem, der har 
-		allermest brug for det.</p>
-	<p> I klar til at stå sammen med os? Du/I kan blive en del af Magikorpset  hjemmefra, så vi sammen kan skabe magi!</p>
-</section>
-<section>
-	<h1>Giv børn et  fortryllende frirum</h1>
-	<Tryllestoev/>
-</section>
-<section>
-	<h1>Følg med i vores fortryllende øjeblikke på vores sociale medier</h1>
-</section>
-<section>
-	<h1>Glem ikke at tilmeld dig vores nyhedsbrev, som vi sender ud én gang månedligt!</h1>
-</section>
-<Tryllestoev/>
-<p class="instrument-sans-bread">
-      TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda veniam
-      dolore repudiandae corrupti magni quibusdam, ducimus totam possimus eos,
-      laborum cumque. Sapiente vitae quis unde, alias odit accusantium
+    <section></section>
+    <section>
+      <h1>
+        Magikorpset gør en forskel ved at trylle og skabe magi på
+        børneafdelingerne rundt omkring i Danmark for syge børn og deres
+        familier.
+      </h1>
+    </section>
+    <Tryllestoev />
+    <section>
+      <h1>Vi har sammen gjort en forskel</h1>
+    </section>
+    <section>
+      <h1>Hvad er magikorpset?</h1>
+      <p>
+        I Magikorpset byder vi også stærke og støttende organisationer og
+        enkeltpersoner velkommen, der ønsker at gøre en forskel for syge børn
+        gennem Kids Aid. Som medlem af Magikorpset bliver I en aktiv del af
+        vores mission – sammen skaber vi håb, styrke og smil for dem, der har
+        allermest brug for det.
+      </p>
+      <p>
+        I klar til at stå sammen med os? Du/I kan blive en del af Magikorpset
+        hjemmefra, så vi sammen kan skabe magi!
+      </p>
+    </section>
+    <section>
+      <h1>Giv børn et fortryllende frirum</h1>
+      <Tryllestoev />
+    </section>
+    <section>
+      <h1>Følg med i vores fortryllende øjeblikke på vores sociale medier</h1>
+    </section>
+    <section>
+      <h1>
+        Glem ikke at tilmeld dig vores nyhedsbrev, som vi sender ud én gang
+        månedligt!
+      </h1>
+    </section>
+    <Tryllestoev />
+    <p class="instrument-sans-bread">
+      TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+      veniam dolore repudiandae corrupti magni quibusdam, ducimus totam possimus
+      eos, laborum cumque. Sapiente vitae quis unde, alias odit accusantium
       recusandae omnis.
     </p>
-    <p class="instrument-sans-citat"> TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tenetur quaerat veritatis, ut facere, fugit praesentium magnam, dicta dignissimos totam soluta eveniet laboriosam fuga natus. Quidem vitae corrupti esse expedita?</p>
-    <slot/>
-	<footer>
-		<p>Kontakt KidsAid:</p>
-		<p>Emma Iben Rosenkrantz Holm</p>
-		<p>eb@kidsaid.dk</p>
-		<p>Tlf.: +45 2025 1987</p>
-	</footer>
-</body>
+    <p class="instrument-sans-citat">
+      TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tenetur
+      quaerat veritatis, ut facere, fugit praesentium magnam, dicta dignissimos
+      totam soluta eveniet laboriosam fuga natus. Quidem vitae corrupti esse
+      expedita?
+    </p>
+    <slot />
+    <footer>
+      <p>Kontakt KidsAid:</p>
+      <p>Emma Iben Rosenkrantz Holm</p>
+      <p>eb@kidsaid.dk</p>
+      <p>Tlf.: +45 2025 1987</p>
+    </footer>
+  </body>
+
 </html>
-
-
-
