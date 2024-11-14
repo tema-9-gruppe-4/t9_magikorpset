@@ -1,20 +1,31 @@
 ---
-import MainLayout from "../layout/MainLayout.astro";
+import "../styles/general.css"
 ---
-
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>MAGIKORPSET</title>
-	</head>
-	<MainLayout>
-	<body>
-		<h1>Astro</h1>
-	</body>
-	</MainLayout>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <title>MAGIKORPSET</title>
+  </head>
+  <body>
+    <h1>TEST Subheader</h1>
+    <p class="instrument-sans-bread">
+      TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda veniam
+      dolore repudiandae corrupti magni quibusdam, ducimus totam possimus eos,
+      laborum cumque. Sapiente vitae quis unde, alias odit accusantium
+      recusandae omnis.
+    </p>
+    <p class="instrument-sans-citat"> TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tenetur quaerat veritatis, ut facere, fugit praesentium magnam, dicta dignissimos totam soluta eveniet laboriosam fuga natus. Quidem vitae corrupti esse expedita?</p>
+    <slot/>
+</body>
 </html>
+
 
 
