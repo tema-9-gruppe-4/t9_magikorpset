@@ -1,0 +1,31 @@
+---
+import "../styles/general.css";
+const { buttontext } = Astro.props;
+---
+
+<button class="button" type="button">{buttontext}</button>
+
+<style>
+  .button {
+    background-color: var(--primary);
+    color: #faf1ff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font1);
+  }
+
+  .button:hover {
+    background-color: #faf1ff;
+    color: var(--primary);
+  }
+  @media (min-width: 800px) {
+    .button {
+      padding: 15px 30px;
+    }
+  }
+</style>
