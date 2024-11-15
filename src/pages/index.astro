@@ -20,14 +20,13 @@ import "../styles/general.css";
     <link rel="icon" href="/favicon_hat.png" sizes="32x32" type="image/png" />
     <title>MAGIKORPSET</title>
   </head>
-
-  <header>
-    <img src="../svg/logo.svg" alt="" />
-  </header>
-
   <body>
-    <section></section>
-    <section>
+    <header>
+      <img src="../svg/logo.svg" alt="" />
+    </header>
+    <main>
+    <section class="blue_1"></section>
+    <section class="blue_2">
       <h1>
         Magikorpset gør en forskel ved at trylle og skabe magi på
         børneafdelingerne rundt omkring i Danmark for syge børn og deres
@@ -35,10 +34,10 @@ import "../styles/general.css";
       </h1>
     </section>
     <Tryllestoev />
-    <section>
+    <section class="green">
       <h1>Vi har sammen gjort en forskel</h1>
     </section>
-    <section>
+    <section class="blue_3">
       <h1>Hvad er magikorpset?</h1>
       <p>
         I Magikorpset byder vi også stærke og støttende organisationer og
@@ -52,21 +51,36 @@ import "../styles/general.css";
         hjemmefra, så vi sammen kan skabe magi!
       </p>
     </section>
-    <section>
+    <section class="turkis">
+      <h1>Vil du være en del af korpset?</h1>
+      <p>“I Magikorpset byder vi også stærke og støttende organisationer og enkeltpersoner velkommen, der ønsker at gøre en forskel for syge børn gennem Kids Aid. Som medlem af Magikorpset bliver I en aktiv del af vores mission – sammen skaber vi håb, styrke og smil for dem, der har 
+        allermest brug for det.
+        
+        
+        Er I klar til at stå sammen med os? Du/I kan blive en del af Magikorpset  hjemmefra, så vi sammen kan skabe magi!</p>
+    </section>
+    <section class="blue_4">
       <h1>Giv børn et fortryllende frirum</h1>
       <Tryllestoev />
     </section>
-    <section>
+    <section class="blue_5">
       <h1>Følg med i vores fortryllende øjeblikke på vores sociale medier</h1>
     </section>
-    <section>
+    <section class="lilla">
       <h1>
         Glem ikke at tilmeld dig vores nyhedsbrev, som vi sender ud én gang
         månedligt!
       </h1>
     </section>
     <Tryllestoev />
-    <p class="instrument-sans-bread">
+  </main>
+    <footer>
+      <p>Kontakt KidsAid:</p>
+      <p>Emma Iben Rosenkrantz Holm</p>
+      <p>eb@kidsaid.dk</p>
+      <p>Tlf.: +45 2025 1987</p>
+    </footer>
+     <!-- <p class="instrument-sans-bread">
       TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
       veniam dolore repudiandae corrupti magni quibusdam, ducimus totam possimus
       eos, laborum cumque. Sapiente vitae quis unde, alias odit accusantium
@@ -78,14 +92,47 @@ import "../styles/general.css";
       totam soluta eveniet laboriosam fuga natus. Quidem vitae corrupti esse
       expedita?
     </p>
-    <slot />
-    <footer>
-      <p>Kontakt KidsAid:</p>
-      <p>Emma Iben Rosenkrantz Holm</p>
-      <p>eb@kidsaid.dk</p>
-      <p>Tlf.: +45 2025 1987</p>
-    </footer>
+    <slot /> -->
   </body>
-
-
 </html>
+
+<style>
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  body{
+    background-color: var(--tertiary);
+  }
+  section {
+  background-attachment: fixed;
+  padding: 5rem;
+  }
+  .blue_2 {
+  width: 100%;
+  height: 80vh;
+  }
+  .blue_2 h1 {
+font-size: larger;
+
+  }
+  .green {
+    background-image: url("./svg/green_section.svg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  .turkis {
+    background-image: url("./svg/tyrkis_section.svg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  .lilla {
+    background-image: url("./svg/lilla_section.svg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+
+</style>
