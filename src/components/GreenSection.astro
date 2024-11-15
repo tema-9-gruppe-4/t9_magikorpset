@@ -3,11 +3,132 @@ import "../styles/general.css";
 ---
 
 <section>
-  <h1>Vi har sammen gjort en forskel</h1>
+  <div class="green">
+    <h1>Vi har sammen gjort en forskel</h1>
+    <div class="quote-container">
+      <button class="prev-quote">
+        <img src="./svg/arrow_left.svg" alt="Venstre pil" />
+      </button>
+      <div class="quote" id="current-quote">
+        <p class="citat">
+          “Vi brugte det meste af ferien på Herlev Hospital med Eske, men idag
+          kom en tryllekunstner ind på hans stue fra Kids Aid, og det er noget
+          af det bedste, der er sket for Eske i denne ferie. Han grinede mere
+          end han har gjort længe. Tusind tak for jeres gode arbejde!”
+        </p>
+        <p class="person">Didde, Mor til Eske</p>
+      </div>
+      <button class="next-quote">
+        <img src="./svg/arrow_right.svg" alt="Højre pil" />
+      </button>
+    </div>
+  </div>
 </section>
 
 <style>
+  h1 {
+  }
   section {
-    background-image: url(/green_section.svg);
+    /*     background-attachment: scroll; */
+    background-image: url("./svg/green_section.svg");
+    padding: 5rem;
+    z-index: -1;
+    text-align: center;
+  }
+
+  p {
+    max-width: 65ch;
+  }
+
+  .green {
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    display: grid;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem;
+    height: auto;
+  }
+
+  .quote-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .quote {
+    text-align: center;
+    max-width: 700px;
+    min-height: 500px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .prev-quote,
+  .next-quote {
+    background: none;
+    border: none;
+    padding: 3rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  p.citat {
+    font-style: italic;
+    padding: 3rem;
   }
 </style>
+
+<script>
+  const quotes = [
+    {
+      text: `“Vi brugte det meste af ferien på Herlev Hospital med Eske, men idag
+      kom en tryllekunstner ind på hans stue fra Kids Aid, og det er noget
+      af det bedste, der er sket for Eske i denne ferie. Han grinede mere
+      end han har gjort længe. Tusind tak for jeres gode arbejde!”`,
+      person: "Didde, Mor til Eske",
+    },
+    {
+      text: `“Da jeg var 7 år, blev jeg selv ved et tilfælde draget ind i det magiske
+      univers, og jeg har lige siden elsket at lave magi for store og små. Når
+      jeg har været på børneafdelinger og trylle for de syge og sårbare børn
+      og ser glæden og overraskelsen i deres øjne, så får jeg følelsen af, at
+      alt går op i en højere enhed. Jeg er derfor utrolig stolt af at være en
+      del af KidsAid Magic. Ingen børn har fortjent at ligge i en
+      hospitalsseng og få frarøvet en magisk barndom.”`,
+      person: "Henrik Svanekiær, magiker og tankelæser",
+    },
+  ];
+
+  let currentIndex = 0;
+  const currentQuote = document.getElementById("current-quote");
+
+  function updateQuote(index) {
+    const { text, person } = quotes[index];
+
+    // Find og opdater elementerne
+    const citatElement = currentQuote.querySelector(".citat");
+    const personElement = currentQuote.querySelector(".person");
+
+    citatElement.textContent = text;
+    personElement.textContent = person;
+  }
+
+  document.querySelector(".prev-quote").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+    updateQuote(currentIndex);
+  });
+
+  document.querySelector(".next-quote").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % quotes.length;
+    updateQuote(currentIndex);
+  });
+</script>
