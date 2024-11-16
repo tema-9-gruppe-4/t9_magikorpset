@@ -28,6 +28,7 @@ import "../styles/general.css";
     </div>
     <header>
       <img src="../svg/logo.svg" alt="" />
+      <a id="top"></a>
     </header>
     <main>
       <section class="blue_1"></section>
@@ -79,6 +80,9 @@ import "../styles/general.css";
         </h1>
       </section>
       <Tryllestoev />
+      <a href="#top" class="bottom-arrow">
+        <img src="../svg/arrow_up.svg" alt="Pil Op" />
+      </a>
     </main>
     <footer>
       <p>Kontakt KidsAid:</p>
@@ -157,6 +161,12 @@ import "../styles/general.css";
     height: 8px;
     background: var(--secondary);
     width: 0%;
+  }
+
+  .bottom-arrow {
+    display: grid;
+    justify-content: center;
+    padding: 2rem;
   }
 </style>
 
