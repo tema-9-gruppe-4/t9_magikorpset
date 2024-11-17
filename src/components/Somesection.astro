@@ -5,13 +5,46 @@ import "../styles/general.css";
 <section>
   <div class="bird"></div>
   <div class="some">
-    <img src="./img/hurigemed" alt="SoMe indhold" />
+    <img src="../../public/img/hurtigemed.png" alt="SoMe indhold" />
     <img src="" alt="" />
     <img src="" alt="" />
   </div>
   <div class="icons">
-    <a href="https://www.facebook.com" target="_blank">
+    <a href="https://www.facebook.com/KidsAidDanmark" target="_blank">
       <img src="../../public/img/facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://www.instagram.com/kidsaiddk/" target="_blank">
+      <img src="../../public/img/social.png" alt="Instagram" />
+    </a>
+    <a
+      href="https://www.linkedin.com/company/kidsaiddanmark/posts/?feedView=all"
+      target="_blank"
+    >
+      <img src="../../public/img/linkedin.png" alt="Linkedin" />
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="../../public/img/email.png" alt="Mail" />
     </a>
   </div>
 </section>
+
+<style>
+  .icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    gap: 20px; /* Space between icons */
+    margin-top: 20px; /* Adjust top margin if needed */
+  }
+
+  .icons a {
+    display: inline-block;
+    width: 40px; /* Set a fixed width for all icons */
+    height: 40px; /* Set a fixed height for all icons */
+  }
+
+  .icons img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: contain; /* Preserve the aspect ratio of the icons */
+  }
+</style>
