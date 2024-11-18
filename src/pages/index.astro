@@ -1,5 +1,6 @@
 ---
 import GreenSection from "../components/GreenSection.astro";
+import Somesection from "../components/Somesection.astro";
 import Tryllestoev from "../components/Tryllestoev.astro";
 import TyrkisSection from "../components/TyrkisSection.astro";
 import "../styles/general.css";
@@ -28,6 +29,7 @@ import "../styles/general.css";
     </div>
     <header>
       <img src="../svg/logo.svg" alt="" />
+      <a id="top"></a>
     </header>
     <main>
       <section class="blue_1"></section>
@@ -72,6 +74,7 @@ import "../styles/general.css";
       </section>
       <section class="blue_5">
         <h1>Følg med i vores fortryllende øjeblikke på vores sociale medier</h1>
+        <Somesection />
       </section>
       <section class="lilla">
         <h1>
@@ -80,6 +83,9 @@ import "../styles/general.css";
         </h1>
       </section>
       <Tryllestoev />
+      <a href="#top" class="bottom-arrow">
+        <img src="../svg/arrow_up.svg" alt="Pil Op" />
+      </a>
     </main>
     <footer>
       <p>Kontakt KidsAid:</p>
@@ -158,6 +164,12 @@ import "../styles/general.css";
     height: 8px;
     background: var(--secondary);
     width: 0%;
+  }
+
+  .bottom-arrow {
+    display: grid;
+    justify-content: center;
+    padding: 2rem;
   }
 </style>
 
