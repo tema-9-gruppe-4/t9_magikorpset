@@ -32,6 +32,9 @@ import "../styles/general.css";
       <a id="top"></a>
     </header>
     <main>
+      <h1 class="hero_h1">
+        Hvilken forskel ville du gøre i verden hvis du kunne trylle?
+      </h1>
       <script
         src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
         type="module"></script>
@@ -50,8 +53,8 @@ import "../styles/general.css";
           børneafdelingerne rundt omkring i Danmark for syge børn og deres
           familier.
         </h1>
+        <Tryllestoev />
       </section>
-      <Tryllestoev />
       <GreenSection />
       <section class="blue_3">
         <h1>Hvad er magikorpset?</h1>
@@ -131,6 +134,10 @@ import "../styles/general.css";
   .hero_motion {
     position: relative;
   }
+  .hero_h1 {
+    font-size: larger;
+    max-width: 30ch;
+  }
   section {
     background-attachment: fixed;
     padding: 5rem;
@@ -139,10 +146,17 @@ import "../styles/general.css";
   .blue_2 {
     width: 100%;
     height: 80vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .blue_2 h1 {
     font-size: larger;
+    max-width: 40ch;
   }
+
   .green {
     background-image: url("./svg/green_section.svg");
     background-size: cover;

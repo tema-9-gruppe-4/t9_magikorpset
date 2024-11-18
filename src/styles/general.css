@@ -58,4 +58,5 @@ p {
   font-family: var(--font2);
   font-size: 24px;
   color: var(--primary);
+  max-width: 50ch;
 }
