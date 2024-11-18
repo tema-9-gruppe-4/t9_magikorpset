@@ -1,8 +1,10 @@
 ---
 import GreenSection from "../components/GreenSection.astro";
+import PinkSection from "../components/PinkSection.astro";
 import Somesection from "../components/Somesection.astro";
 import Tryllestoev from "../components/Tryllestoev.astro";
 import TyrkisSection from "../components/TyrkisSection.astro";
+
 import "../styles/general.css";
 ---
 
@@ -32,17 +34,22 @@ import "../styles/general.css";
       <a id="top"></a>
     </header>
     <main>
-      <script
-        src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-        type="module"></script>
+      <div class="hero_wrapper">
+        <h1 class="hero_h1">
+          Hvilken forskel ville du gøre i verden hvis du kunne trylle?
+        </h1>
+        <script
+          src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+          type="module"></script>
 
-      <dotlottie-player
-        src="https://lottie.host/1acfe976-f2a4-41fe-9033-d1c49fcdf2ba/IPYtqZx5pa.json"
-        background="transparent"
-        class="hero_motion"
-        speed="1"
-        loop
-        autoplay></dotlottie-player>
+        <dotlottie-player
+          src="https://lottie.host/1acfe976-f2a4-41fe-9033-d1c49fcdf2ba/IPYtqZx5pa.json"
+          background="transparent"
+          class="hero_motion"
+          speed="1"
+          loop
+          autoplay></dotlottie-player>
+      </div>
       <section class="blue_1"></section>
       <section class="blue_2">
         <h1>
@@ -50,8 +57,8 @@ import "../styles/general.css";
           børneafdelingerne rundt omkring i Danmark for syge børn og deres
           familier.
         </h1>
+        <Tryllestoev />
       </section>
-      <Tryllestoev />
       <GreenSection />
       <section class="blue_3">
         <h1>Hvad er magikorpset?</h1>
@@ -67,17 +74,7 @@ import "../styles/general.css";
           hjemmefra, så vi sammen kan skabe magi!
         </p>
       </section>
-      <!-- <section class="turkis">
-        <h1>Vil du være en del af korpset?</h1>
-        <p>
-          “I Magikorpset byder vi også stærke og støttende organisationer og
-          enkeltpersoner velkommen, der ønsker at gøre en forskel for syge børn
-          gennem Kids Aid. Som medlem af Magikorpset bliver I en aktiv del af
-          vores mission – sammen skaber vi håb, styrke og smil for dem, der har
-          allermest brug for det. Er I klar til at stå sammen med os? Du/I kan
-          blive en del af Magikorpset hjemmefra, så vi sammen kan skabe magi!
-        </p>
-      </section> -->
+
       <TyrkisSection />
       <section class="blue_4">
         <h1>Giv børn et fortryllende frirum</h1>
@@ -87,12 +84,13 @@ import "../styles/general.css";
         <h1>Følg med i vores fortryllende øjeblikke på vores sociale medier</h1>
         <Somesection />
       </section>
-      <section class="lilla">
+      <!-- <section class="lilla">
         <h1>
           Glem ikke at tilmeld dig vores nyhedsbrev, som vi sender ud én gang
           månedligt!
         </h1>
-      </section>
+      </section> -->
+      <PinkSection />
       <Tryllestoev />
       <a href="#top" class="bottom-arrow">
         <img src="../svg/arrow_up.svg" alt="Pil Op" />
@@ -131,17 +129,54 @@ import "../styles/general.css";
   .hero_motion {
     position: relative;
   }
+  .hero_h1 {
+    font-size: larger;
+    max-width: 30ch;
+  }
   section {
     background-attachment: fixed;
     padding: 5rem;
     z-index: -1;
   }
   .blue_2 {
-    width: 100%;
-    height: 80vh;
+    /* width: 100%;
+    height: 80vh; */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* justify-content: center; */
   }
   .blue_2 h1 {
-    font-size: larger;
+    font-size: 28px;
+    max-width: 40ch;
+  }
+  .blue_3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* text-align: center; */
+
+    justify-content: center;
+  }
+  .blue_3 h1 {
+    margin-bottom: 3rem;
+  }
+
+  .blue_4 {
+    padding: 0;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .blue_5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .green {
     background-image: url("./svg/green_section.svg");
@@ -184,6 +219,29 @@ import "../styles/general.css";
     display: grid;
     justify-content: center;
     padding: 2rem;
+  }
+
+  .hero_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Sørg for, at sektionen fylder skærmen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero_motion {
+    /* width: 100%;
+    height: 100%; */
+    position: absolute; /* Sørger for, at den bliver baggrunden */
+    z-index: 1; /* Placer bag teksten */
+  }
+
+  .hero_h1 {
+    position: absolute; /* Placer oven på Lottie */
+    z-index: 2; /* Sørg for, at teksten er øverst */
+    text-align: center;
   }
 </style>
 
