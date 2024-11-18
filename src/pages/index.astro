@@ -32,6 +32,17 @@ import "../styles/general.css";
       <a id="top"></a>
     </header>
     <main>
+      <script
+        src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+        type="module"></script>
+
+      <dotlottie-player
+        src="https://lottie.host/1acfe976-f2a4-41fe-9033-d1c49fcdf2ba/IPYtqZx5pa.json"
+        background="transparent"
+        class="hero_motion"
+        speed="1"
+        loop
+        autoplay></dotlottie-player>
       <section class="blue_1"></section>
       <section class="blue_2">
         <h1>
@@ -116,6 +127,9 @@ import "../styles/general.css";
   }
   body {
     background-color: var(--tertiary);
+  }
+  .hero_motion {
+    position: relative;
   }
   section {
     background-attachment: fixed;
