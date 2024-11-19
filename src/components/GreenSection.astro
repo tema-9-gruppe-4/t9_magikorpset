@@ -9,7 +9,7 @@ import "../styles/general.css";
 </svg>
 <section>
   <div class="green">
-    <h1>Vi har sammen gjort en forskel</h1>
+    <h1 class="green-section-heading">Vi har sammen gjort en forskel</h1>
     <div class="quote-container">
       <button class="prev-quote">
         <img src="./svg/arrow_left.svg" alt="Venstre pil" />
@@ -148,5 +148,51 @@ import "../styles/general.css";
   document.querySelector(".next-quote").addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % quotes.length;
     updateQuote(currentIndex);
+  });
+
+  //*h1 scroll//*
+
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Helper-funktion til at opdele tekst
+  function wrapLettersWithSpans(selector) {
+    const element = document.querySelector(selector);
+    const text = element.textContent;
+    element.innerHTML = text
+      .split("")
+      .map((char) => (char === " " ? " " : `<span>${char}</span>`))
+      .join("");
+  }
+
+  // Når DOM er klar
+  document.addEventListener("DOMContentLoaded", () => {
+    wrapLettersWithSpans(".green-section-heading");
+
+    const h1Spans = document.querySelectorAll(".green-section-heading span");
+
+    gsap.fromTo(
+      h1Spans,
+      {
+        opacity: 0,
+        scale: 0.5,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        stagger: 0.1,
+        ease: "bounce.out",
+        scrollTrigger: {
+          trigger: ".green-section-heading", // Trigger set to the heading with the class
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+        },
+      }
+    );
   });
 </script>
