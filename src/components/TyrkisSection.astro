@@ -140,7 +140,6 @@ import MeldDigIndButton from "../components/MeldDigIndButton.astro";
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Helper-funktion til at opdele tekst
   function wrapLettersWithSpans(selector) {
     const element = document.querySelector(selector);
     const text = element.textContent;
@@ -170,7 +169,7 @@ import MeldDigIndButton from "../components/MeldDigIndButton.astro";
         stagger: 0.1,
         ease: "bounce.out",
         scrollTrigger: {
-          trigger: ".tyrkis-section-heading", // Trigger set to the heading with the class
+          trigger: ".tyrkis-section-heading",
           start: "top 80%",
           end: "top 20%",
           scrub: true,

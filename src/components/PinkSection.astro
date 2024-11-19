@@ -14,14 +14,14 @@ import TilmeldButton from "./TilmeldButton.astro";
     månedligt!
   </h1>
   <div>
-  <form>
-    <div class="email">
-      <span class="email-icon material-symbols-outlined"></span>
-      <input class="email-input" type="email" placeholder="E-mail" />
-    </div>
-  </form>
-  <TilmeldButton buttontext="Tilmeld" />
-</div>
+    <form>
+      <div class="email">
+        <span class="email-icon material-symbols-outlined"></span>
+        <input class="email-input" type="email" placeholder="E-mail" />
+      </div>
+    </form>
+    <TilmeldButton buttontext="Tilmeld" />
+  </div>
 </section>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1509 325" fill="none">
   <path
@@ -62,7 +62,7 @@ import TilmeldButton from "./TilmeldButton.astro";
     display: flex;
     gap: 2rem;
   }
-/**Styling af e-mail input**/
+  /**Styling af e-mail input**/
   .email {
     width: max-content;
     display: flex;
@@ -95,6 +95,18 @@ import TilmeldButton from "./TilmeldButton.astro";
   @media (min-width: 800px) {
     .email {
       height: 55px;
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 600px) {
+    h1 {
+      font-size: 28px; /* Gør overskriften lidt mindre */
+    }
+  }
+
+  @media (max-width: 599px) {
+    h1 {
+      font-size: 24px; /* Endnu mindre overskrift */
     }
   }
 </style>

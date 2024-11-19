@@ -60,3 +60,33 @@ p {
   color: var(--primary);
   max-width: 50ch;
 }
+
+@media (max-width: 1024px) and (min-width: 600px) {
+  h1 {
+    font-size: 28px; /* Gør overskriften lidt mindre */
+  }
+  .blue_2 h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 20px; /* Gør brødteksten mindre */
+  }
+  .hero_h1 {
+    font-size: medium;
+    max-width: 30ch;
+  }
+}
+
+/* Mobiltelefoner - Skærme med bredde på max 599px */
+@media (max-width: 599px) {
+  h1 {
+    font-size: 24px; /* Endnu mindre overskrift */
+  }
+  .blue_2 h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 18px; /* Gør brødteksten mindre */
+  }
+}

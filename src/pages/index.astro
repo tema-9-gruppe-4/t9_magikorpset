@@ -31,7 +31,7 @@ import "../styles/general.css";
       <div class="progress-bar" id="myBar"></div>
     </div>
     <header>
-      <img src="../svg/logo.svg" alt="" />
+      <img src="../svg/logo.svg" alt="" class="logo_svg" />
       <a id="top"></a>
     </header>
     <main>
@@ -97,19 +97,6 @@ import "../styles/general.css";
       <p>eb@kidsaid.dk</p>
       <p>Tlf.: +45 2025 1987</p>
     </footer>
-    <!-- <p class="instrument-sans-bread">
-      TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-      veniam dolore repudiandae corrupti magni quibusdam, ducimus totam possimus
-      eos, laborum cumque. Sapiente vitae quis unde, alias odit accusantium
-      recusandae omnis.
-    </p>
-    <p class="instrument-sans-citat">
-      TEST Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tenetur
-      quaerat veritatis, ut facere, fugit praesentium magnam, dicta dignissimos
-      totam soluta eveniet laboriosam fuga natus. Quidem vitae corrupti esse
-      expedita?
-    </p>
-    <slot /> -->
   </body>
 </html>
 
@@ -134,24 +121,22 @@ import "../styles/general.css";
     z-index: -1;
   }
   .blue_2 {
-    /* width: 100%;
-    height: 80vh; */
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* justify-content: center; */
   }
   .blue_2 h1 {
     font-size: 28px;
     max-width: 40ch;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
   .blue_3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* text-align: center; */
 
     justify-content: center;
   }
@@ -173,7 +158,7 @@ import "../styles/general.css";
     align-items: center;
     text-align: center;
   }
-  .green {
+  /* .green {
     background-image: url("./svg/green_section.svg");
     background-size: cover;
     width: 100%;
@@ -191,7 +176,7 @@ import "../styles/general.css";
     background-size: cover;
     width: 100%;
     height: 100vh;
-  }
+  } */
 
   /**scroll indicator styling**/
   /* The progress container (grey background) */
@@ -237,6 +222,48 @@ import "../styles/general.css";
     position: absolute; /* Placer oven på Lottie */
     z-index: 2; /* Sørg for, at teksten er øverst */
     text-align: center;
+  }
+
+  footer {
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (max-width: 1024px) and (min-width: 600px) {
+    h1 {
+      font-size: 28px; /* Gør overskriften lidt mindre */
+    }
+
+    p {
+      font-size: 20px; /* Gør brødteksten mindre */
+    }
+    .blue_2 h1 {
+      font-size: 28px;
+    }
+    .hero_h1 {
+      font-size: medium;
+    }
+    .logo_svg {
+      width: 110vh; /* Mindre størrelse for tablets */
+    }
+  }
+
+  @media (max-width: 599px) {
+    h1 {
+      font-size: 24px; /* Endnu mindre overskrift */
+    }
+    .hero_h1 {
+      font-size: 12px;
+    }
+    .blue_2 h1 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 18px; /* Gør brødteksten mindre */
+    }
+    .logo_svg {
+      width: 56vh; /* Mindre størrelse for tablets */
+    }
   }
 </style>
 
