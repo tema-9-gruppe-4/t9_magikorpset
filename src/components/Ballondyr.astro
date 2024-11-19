@@ -1,0 +1,85 @@
+<section class="scroll-section">
+  <div class="buffer"></div>
+  <div class="sticky-container">
+    <img class="balloon" src="./svg/ballondyr.svg" alt="Ballondyr" />
+  </div>
+</section>
+
+<style>
+  .scroll-section {
+    height: 300vh; /* Lang sektion for scroll-effekten */
+    position: relative;
+  }
+
+  .buffer {
+    height: 50vh; /* Første del af sektionen, uden animation */
+  }
+
+  .sticky-container {
+    position: sticky;
+    top: 50%; /* Holder SVG midt på siden */
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 2;
+  }
+
+  .balloon {
+    width: 600px; /* Juster størrelse på SVG */
+    transition: transform 0.4s linear; /* Glat animation */
+  }
+</style>
+
+<script>
+  const balloon = document.querySelector(".balloon") as HTMLElement;
+  const section = document.querySelector(".scroll-section") as HTMLElement;
+  const buffer = document.querySelector(".buffer") as HTMLElement;
+
+  if (balloon && section && buffer) {
+    document.addEventListener("scroll", () => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const bufferHeight = buffer.offsetHeight;
+      const sectionHeight = section.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      // Scroll-progress starter først efter bufferen
+      const progress = Math.min(
+        Math.max(
+          (viewportHeight - sectionTop - bufferHeight) /
+            (sectionHeight - bufferHeight),
+          0
+        ),
+        1
+      );
+
+      // Når scroll er under bufferområdet, bevæg ballondyret op og drej det
+      if (progress > 0 && progress < 0.4) {
+        // Ballondyret bevæger sig op til midten og roterer
+        const translateY = 100 * (1 - progress * 2.5);
+        balloon.style.opacity = "1";
+        balloon.style.transform = `translateY(${translateY}px) rotate(${progress * 360}deg)`;
+      }
+
+      // Når scroll når midten, stop med at rotere og forbliv på skærmen
+      if (progress >= 0.4 && progress < 0.8) {
+        // Ballondyret forbliver på midten og roterer én gang
+        const rotate = Math.min((progress - 0.4) * 720, 360); // Begræns rotation til 360 grader
+        balloon.style.transform = `translateY(0) rotate(${rotate}deg)`;
+      }
+
+      // Når scroll fortsætter, scroller ballondyret opad
+      if (progress >= 0.8) {
+        // Ballondyret bevæger sig op og ud af toppen
+        const translateY = -(progress - 0.8) * 400;
+        balloon.style.transform = `translateY(${translateY}px) rotate(360deg)`; // Stop rotation ved 360 grader
+      }
+
+      // Når vi er i starten eller slutningen, gør ballondyret usynligt
+      if (progress === 0 || progress === 1) {
+        balloon.style.opacity = "0";
+      }
+    });
+  }
+</script>
